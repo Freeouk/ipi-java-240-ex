@@ -1,20 +1,20 @@
 package com.ipiecoles.java.java240;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        ProduitManager pm = new ProduitManager();
-        WebPageManager webPageManager = new WebPageManager();
-        pm.setWebPageManager(webPageManager);
-        BitcoinService bitcoinService = new BitcoinService();
-        bitcoinService.setWebPageManager(webPageManager);
-        pm.setBitcoinService(bitcoinService);
 
-
-
+        ApplicationContext ctx = null;
+        //Configuration Java
+        ctx = new AnnotationConfigApplicationContext(SpringConfig.class);
+        BitcoinService bs = ctx.getBean(BitcoinService.class);
+        ProduitManager pm = ctx.getBean(ProduitManager.class);
 
         System.out.println("Bienvenue !");
         while(true){
@@ -30,7 +30,7 @@ public class Main {
             int saisie = scanner.nextInt();
             switch (saisie){
                 case 1:
-                    System.out.println("1 BTC = " + bitcoinService.getBitcoinRate() + " €");
+                    System.out.println("1 BTC = " + bs.getBitcoinRate() + " €");
                     break;
                 case 2:
                     pm.ajouterProduit();

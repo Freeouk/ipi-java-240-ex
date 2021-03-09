@@ -8,6 +8,8 @@ import java.util.Scanner;
 public class ProduitManager {
 
     private List<Produit> produits = new ArrayList<>();
+    private BitcoinService bitcoinService;
+    private WebPageManager webPageManager;
 
     public BitcoinService getBitcoinService() {
         return bitcoinService;
@@ -17,7 +19,6 @@ public class ProduitManager {
         this.bitcoinService = bitcoinService;
     }
 
-    private BitcoinService bitcoinService;
 
     public WebPageManager getWebPageManager() {
         return webPageManager;
@@ -27,7 +28,6 @@ public class ProduitManager {
         this.webPageManager = webPageManager;
     }
 
-    private WebPageManager webPageManager;
 
     /**
      * Méthode qui demande les caractéristiques d'un nouveau produit
