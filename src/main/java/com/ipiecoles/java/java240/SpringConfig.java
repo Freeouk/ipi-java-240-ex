@@ -6,12 +6,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-@PropertySource("classpath:app.properties")
+//@PropertySource("classpath:app.properties")
 @ComponentScan(basePackages ="com.ipiecoles.java.java240")
 public class SpringConfig {
 //
     @Bean
-    public BitcoinService bitcoinServiceWithoutCache(){
+    public BitcoinService bitcoinService(){
         BitcoinService bs = new BitcoinService();
         bs.setForceRefresh(true);
         return bs;

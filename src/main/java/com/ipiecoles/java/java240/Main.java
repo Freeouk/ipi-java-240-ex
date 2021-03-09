@@ -13,7 +13,7 @@ public class Main {
         ApplicationContext ctx = null;
         //Configuration Java
         ctx = new AnnotationConfigApplicationContext(SpringConfig.class);
-        BitcoinService bs = ctx.getBean("bitcoinServiceWithoutCache", BitcoinService.class);
+        BitcoinService bs = ctx.getBean(BitcoinService.class);
         ProduitManager pm = ctx.getBean(ProduitManager.class);
 
         System.out.println("Bienvenue !");

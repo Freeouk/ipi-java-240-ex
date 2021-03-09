@@ -14,7 +14,7 @@ public class BitcoinService {
 
     private Double rate = null;
 
-    @Value("${bitcoinService.forceRefresh}")
+//    @Value("${bitcoinService.forceRefresh}")
     private Boolean forceRefresh;
 
     public Boolean getForceRefresh() {
